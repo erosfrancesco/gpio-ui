@@ -1,6 +1,6 @@
 import { WebSocketServer } from "ws";
-import { pinToggle as pinToggleActionName, wsPort } from "../config";
-import { messageAction, pinToggleAction } from "./messages";
+import { pinToggle as pinToggleActionName, wsPort } from "../config.js";
+import { messageAction, pinToggleAction } from "./messages.js";
 
 const wss = new WebSocketServer({ port: wsPort });
 
@@ -33,4 +33,4 @@ wss.on("connection", (ws) => {
   });
 });
 
-console.log("Server listening to localhost:", port);
+console.log("Server listening to localhost:", wsPort);

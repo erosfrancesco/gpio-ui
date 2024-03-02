@@ -1,5 +1,5 @@
-import * as messages from "../config";
-export * from '../config';
+import * as messages from "../../config.js";
+export { messages }
 
 export const messageAction = ({ error, message } :any) => {
   return JSON.stringify({

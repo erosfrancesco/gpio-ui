@@ -1,4 +1,5 @@
-import { ws, pinToggleAction } from '../../ws/client';
+import { ws } from '../ws/client.ts';
+import { pinToggleAction } from '../ws/messages.ts'
 
 const sendActionToWs = ({ number, state }: GPIOSetStateAction) => {
     ws.send(pinToggleAction({ number, state }))

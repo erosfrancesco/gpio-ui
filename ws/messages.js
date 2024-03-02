@@ -1,5 +1,5 @@
 import rpio from "rpio";
-import { message as messageActionName } from "../config";
+import { message as messageActionName } from "../config.js";
 
 export const messageAction = ({ error, message }) => {
   return JSON.stringify({

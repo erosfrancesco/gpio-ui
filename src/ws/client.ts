@@ -1,7 +1,6 @@
-import { messageAction, message as messageActionName, wsPort } from "./messages.ts";
-export * from './messages.ts'
+import { messageAction, messages } from "./messages.ts";
 
-export const ws = new WebSocket("ws://localhost:" + wsPort);
+export const ws = new WebSocket("ws://localhost:" + messages.wsPort);
 
 // HANDLERS
 const onWSOpen = () => {
@@ -18,7 +17,7 @@ const onWSMessage = (buffer :any) => {
         const data = JSON.parse(buffer.data);
         const { type, ...args } = data;
         
-        if (type !== messageActionName) {
+        if (type !== messages.message) {
             return;
         }
 
