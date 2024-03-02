@@ -1,8 +1,29 @@
 .pin_number_wrapper {
     background: black;
+    color: white;
+}
+
+.pin_number_selected {
+    background: cornflowerblue;
+    color: black;
+    position: relative;
+    float: right;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.dontDisplay {
+    background: transparent;
+    color: white;
+}
+
+.removeSelect {
+    user-select: none;
 }
 
 .pin_number {
+    cursor: pointer;
     background: black;
     color: white;
 
@@ -30,29 +51,4 @@
 }
 .pin_number_id {
     border-color: yellow;
-}
-/**/
-
-/**/
-.pin_row {
-    background-color: #274;
-    border: solid 0.05rem lightgrey;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    padding: 0;
-    margin: 0;
-}
-
-.pin_label {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0.5rem;
-}
-
-.left_column {
-    flex-direction: row-reverse;
 }

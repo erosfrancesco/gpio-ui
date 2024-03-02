@@ -1,6 +1,6 @@
-import pinoutMap from './logic/pinout'
+import pinoutMap from '../logic/pinout.ts'
+import Pin from './Pin/index.tsx'
 import './board.css'
-import Pin from './pin/pin'
 
 export function Board() {
     const rightPinout = pinoutMap.filter((_, index) => index % 2)

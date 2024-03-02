@@ -1,6 +1,8 @@
-import { PinOptions, PinOptionsType } from '../logic/pinout'
-import './pin.css'
+import { PinOptions, PinOptionsType } from '../../logic/pinout'
+import './index.css';
+
 import PinActions from './pinActions';
+import PinNumber from './pinNumber';
 
 const typeClassNames :any = {};
 typeClassNames[PinOptionsType.POWER] = 'pin_number_power'
@@ -15,16 +17,6 @@ export interface BoardPin extends PinOptions {
 }
 
 export interface BoardPinProps { pin: BoardPin }
-
-function PinNumber({ pin }: BoardPinProps) {
-    const { type, number } = pin;
-
-    return <div className='pin_number_wrapper'>
-        <div className={'pin_number ' + typeClassNames[type]}>
-            <p>{(number < 10 ? '0' : '') + '' + number}</p>
-        </div>
-    </div>
-}
 
 export function Pin({ pin }: BoardPinProps) {
     const { label, isLeft } = pin;

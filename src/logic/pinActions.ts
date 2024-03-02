@@ -1,10 +1,4 @@
-import { ws } from '../ws/client.ts';
-import { pinToggleAction } from '../ws/messages.ts'
-
-const sendActionToWs = ({ number, state }: GPIOSetStateAction) => {
-    ws.send(pinToggleAction({ number, state }))
-}
-
+import { setPinState } from '../ws/wsActions.ts'
 
 interface GPIOSetStateAction {
     number: number
@@ -12,5 +6,5 @@ interface GPIOSetStateAction {
 }
 
 export const setGPIOState = ({ number, state }: GPIOSetStateAction) => {
-    sendActionToWs({ number, state })
+    setPinState({ number, state });
 }

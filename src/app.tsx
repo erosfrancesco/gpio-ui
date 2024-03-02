@@ -1,5 +1,4 @@
-import Board from './board'
-import './app.css'
+import Board from './components/board'
 
 export function App() {
   return <Board />
