@@ -2,7 +2,7 @@ import './index.css';
 
 import PinActions from './pinActions';
 import PinNumber from './pinNumber';
-import { BoardPinProps } from 'interfaces/components/Pin';
+import { BoardPinProps } from 'interfaces/components/BoardPin';
 
 function Pin({ pin }: BoardPinProps) {
     const { label, isLeft } = pin;

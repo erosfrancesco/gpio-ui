@@ -1,8 +1,8 @@
 import { useState } from 'preact/hooks';
 import './pinNumber.css'
 
-import { BoardPinProps } from 'interfaces/components/Pin';
-import { PinOptionsType } from 'interfaces/pin.ts';
+import { BoardPinProps } from 'interfaces/components/BoardPin';
+import { PinOptionsType } from 'interfaces/pin';
 
 const typeClassNames :any = {};
 typeClassNames[PinOptionsType.POWER] = 'pin_number_power'

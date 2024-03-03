@@ -1,4 +1,4 @@
-import { PinOptions, PinOptionsType } from "interfaces/pin.ts";
+import { PinOptions, PinOptionsType } from "interfaces/pin";
 
 export const pinoutMap: PinOptions[] = [
     {
