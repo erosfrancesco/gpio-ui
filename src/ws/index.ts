@@ -1,7 +1,8 @@
-import * as config from "../../config.js";
 import { actionHandlers, actionNotMapped } from "./actionRouter.ts";
 
-export const ws = new WebSocket("ws://localhost:" + config.wsPort);
+const { VITE_WSPORT, VITE_WSPATH } = import.meta.env;
+
+export const ws = new WebSocket("ws://" + VITE_WSPATH + ":" + VITE_WSPORT);
 
 // HANDLERS
 const onWSMessage = (buffer :any) => {

@@ -1,8 +1,8 @@
+import 'dotenv/config'
 import { WebSocketServer } from "ws";
-import * as actions from "../config.js";
 import { actionHandlers, actionNotMapped } from "./actionRouter.js";
 
-const port = actions.wsPort;
+const { VITE_WSPORT: port } = process.env;
 const wss = new WebSocketServer({ port });
 
 wss.on("connection", (ws) => {

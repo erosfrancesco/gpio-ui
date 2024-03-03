@@ -1,4 +1,4 @@
-import * as actions from "../../config.js";
+const { VITE_WS_ACTION_SENDMESSAGE } = import.meta.env;
 
 type ActionHandler = (ws: WebSocket, data: any) => void;
 interface ActionHandlersMap {
@@ -19,7 +19,7 @@ const messageHandler: ActionHandler = (_, data :any) => {
 }
 
 export const actionHandlers: ActionHandlersMap = {
-  [actions.message]: messageHandler,
+  [VITE_WS_ACTION_SENDMESSAGE]: messageHandler,
 };
 
 export const actionNotMapped: ActionHandler = () => {}
