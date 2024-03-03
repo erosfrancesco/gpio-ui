@@ -1,4 +1,3 @@
-// import rpio from "rpio";
 import { message as messageActionName } from "../config.js";
 
 export const sendToUI = (ws, { error, message }) => {
@@ -13,8 +12,6 @@ export const sendToUI = (ws, { error, message }) => {
 
 export const pinToggleAction = (ws, { number, state }) => {
   console.log(number, state);
-  // rpio.open(number, rpio.INPUT);
-  // console.log('Pin ' + number + ' is currently ' + (rpio.read(number) ? 'high' : 'low'));
 };
 
 export const actionNotMapped = (ws, { type }) => {

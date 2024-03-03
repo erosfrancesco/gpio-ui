@@ -1,35 +1,16 @@
-import { actions } from "./wsActions.ts";
+import { wsPort } from "./wsActions.ts";
+import { actionHandlers, actionNotMapped } from "./actionRouter.ts";
 
-export const ws = new WebSocket("ws://localhost:" + actions.wsPort);
-
-// ACTION HANDLERS
-const messageHandler = (data :any) => {
-    const { error, message } = data;
-
-    // ERROR RECEIVED
-    if (error) {
-        console.error(error);
-        return;
-    }
-
-    // MESSAGE RECEIVED
-    console.log(message)
-}
-//
+export const ws = new WebSocket("ws://raspberrypi.local:" + wsPort);
 
 // HANDLERS
 const onWSMessage = (buffer :any) => {
-    // data received from ws server, like pin polling
+    // data received from ws server, like pin status
     try {
         const data = JSON.parse(buffer.data);
         const { type } = data;
-        
-        if (type === actions.message) {
-            messageHandler(data);
-            return;
-        }
-
-        // 
+        const handler = actionHandlers[type] || actionNotMapped;
+        handler(ws, data);
     } catch (e) {
         console.log("Error parsing message: ", e);
     }

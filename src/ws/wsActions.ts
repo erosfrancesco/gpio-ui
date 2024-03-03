@@ -1,6 +1,8 @@
-import * as actions from "../../config.js";
+import * as config from "../../config.js";
 import ws from "./index.js";
+const { wsPort, ...actions } = config;
 export { actions };
+export { wsPort };
 
 type WSActionHandlerGen = (actionType :string, options :any) => void;
 
