@@ -1,7 +1,7 @@
 import { setGPIOState } from "../../logic/pinActions.ts";
-import { PinOptionsType } from "../../logic/pinout";
 import GPIOSlide from "../GPIOSlide";
-import { BoardPinProps } from "./index";
+import { PinOptionsType } from "interfaces/pin.ts";
+import { BoardPinProps } from "interfaces/components/Pin.ts";
 
 function PinActions({ pin }: BoardPinProps) {
     const { number, type } = pin

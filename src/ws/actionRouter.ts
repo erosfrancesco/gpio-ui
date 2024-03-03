@@ -1,9 +1,6 @@
-const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;
+import { ActionHandler, ActionHandlersMap } from "interfaces/wsActions";
 
-type ActionHandler = (ws: WebSocket, data: any) => void;
-interface ActionHandlersMap {
-  [key: string]: ActionHandler
-}
+const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;
 
 const messageHandler: ActionHandler = (_, data :any) => {
   const { error, message } = data;

@@ -1,10 +1,6 @@
 import { useState } from "preact/hooks"
 import './GPIOSlide.css'
-
-interface GPIOSlideProps {
-    onToggle?: (value: boolean) => void;
-    active?: boolean;
-}
+import { GPIOSlideProps } from "interfaces/components/GPIOSlide";
 
 function GPIOSlide({ onToggle = () => {}, active: activeProps }: GPIOSlideProps) {
     const [active, setActive] = useState(activeProps);

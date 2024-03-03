@@ -1,15 +1,4 @@
-export enum PinOptionsType {
-    POWER,
-    GROUND,
-    GPIO,
-    ID_SC,
-    ID_SD
-}
-
-export interface PinOptions {
-    type: PinOptionsType;
-    label: string;
-}
+import { PinOptions, PinOptionsType } from "interfaces/pin.ts";
 
 export const pinoutMap: PinOptions[] = [
     {

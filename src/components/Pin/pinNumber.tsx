@@ -1,7 +1,8 @@
 import { useState } from 'preact/hooks';
-import { BoardPinProps } from './index';
-import { PinOptionsType } from '../../logic/pinout'
 import './pinNumber.css'
+
+import { BoardPinProps } from 'interfaces/components/Pin';
+import { PinOptionsType } from 'interfaces/pin.ts';
 
 const typeClassNames :any = {};
 typeClassNames[PinOptionsType.POWER] = 'pin_number_power'
@@ -18,7 +19,7 @@ function PinNumber({ pin }: BoardPinProps) {
     return <div className='pin_number_wrapper'>
         <div className={'pin_number ' + typeClassNames[type]} onClick={toggleSelected}>
             <div className={'pin_number_selected' + (selected ? '' : ' dontDisplay')}>
-                <span className='removeSelect'>{(number < 10 ? '0' : '') + '' + number}</span>
+                <span className='pin_number_content'>{(number < 10 ? '0' : '') + '' + number}</span>
             </div>
         </div>
     </div>
