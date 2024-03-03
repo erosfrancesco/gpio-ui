@@ -1,4 +1,4 @@
-// import rpio from "rpio";
+import rpio from "rpio";
 const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINTOGGLE } = process.env;
 
 export const sendToUI = (ws, { error, message }) => {
