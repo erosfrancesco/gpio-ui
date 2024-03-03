@@ -1,4 +1,4 @@
-const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINTOGGLE } = process.env;
+const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = process.env;
 
 export const sendToUI = (ws, { error, message }) => {
   ws.send(
@@ -10,8 +10,12 @@ export const sendToUI = (ws, { error, message }) => {
   );
 };
 
-export const pinToggleAction = (ws, { number, state }) => {
-  console.log(VITE_WS_ACTION_PINTOGGLE, number, state);
+export const pinWrite = (ws, { number, state }) => {
+  console.log(VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD, number, state);
+};
+
+export const pinRead = (ws, { number, state }) => {
+  console.log(VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD, number, state);
 };
 
 export const actionNotMapped = (ws, { type }) => {

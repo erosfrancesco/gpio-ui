@@ -1,5 +1,5 @@
 import ws from "./index.ts";
-const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINTOGGLE } = import.meta.env;
+const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;
 
 type WSActionHandlerGen = (actionType :string | undefined, options :any) => void;
 
@@ -19,8 +19,10 @@ interface sendMessageToNodeOptions {
 // unused for now...
 export const sendMessageToNode = (options :sendMessageToNodeOptions) => WSAction(VITE_WS_ACTION_SENDMESSAGE, options);
 
+// interface to be redifined for read and write
 interface setPinStateOptions {
   state: boolean; 
   number: number;
 } 
-export const setPinState = (options :setPinStateOptions) => WSAction(VITE_WS_ACTION_PINTOGGLE, options);
+export const writeToPin = (options :setPinStateOptions) => WSAction(VITE_WS_ACTION_PINWRITE, options);
+export const readPin = (options :setPinStateOptions) => WSAction(VITE_WS_ACTION_PINREAD, options);

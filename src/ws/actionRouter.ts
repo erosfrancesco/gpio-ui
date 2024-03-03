@@ -1,4 +1,4 @@
-const { VITE_WS_ACTION_SENDMESSAGE } = import.meta.env;
+const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;
 
 type ActionHandler = (ws: WebSocket, data: any) => void;
 interface ActionHandlersMap {
@@ -18,8 +18,10 @@ const messageHandler: ActionHandler = (_, data :any) => {
   console.log(message)
 }
 
+export const actionNotMapped: ActionHandler = () => {}
+
 export const actionHandlers: ActionHandlersMap = {
   [VITE_WS_ACTION_SENDMESSAGE]: messageHandler,
+  [VITE_WS_ACTION_PINWRITE]: actionNotMapped,
+  [VITE_WS_ACTION_PINREAD]: actionNotMapped,
 };
-
-export const actionNotMapped: ActionHandler = () => {}
