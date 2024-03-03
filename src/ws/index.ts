@@ -1,7 +1,7 @@
-import { wsPort } from "./wsActions.ts";
+import * as config from "../../config.js";
 import { actionHandlers, actionNotMapped } from "./actionRouter.ts";
 
-export const ws = new WebSocket("ws://raspberrypi.local:" + wsPort);
+export const ws = new WebSocket("ws://localhost:" + config.wsPort);
 
 // HANDLERS
 const onWSMessage = (buffer :any) => {

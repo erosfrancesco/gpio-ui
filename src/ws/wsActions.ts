@@ -1,8 +1,5 @@
-import * as config from "../../config.js";
-import ws from "./index.js";
-const { wsPort, ...actions } = config;
-export { actions };
-export { wsPort };
+import * as actions from "../../config.js";
+import ws from "./index.ts";
 
 type WSActionHandlerGen = (actionType :string, options :any) => void;
 
@@ -15,13 +12,14 @@ const WSAction :WSActionHandlerGen = (type, options) => {
   );
 };
 
-export interface sendMessageToNodeOptions {
+interface sendMessageToNodeOptions {
   error? :string;
   message? :string;
 } 
+// unused for now...
 export const sendMessageToNode = (options :sendMessageToNodeOptions) => WSAction(actions.message, options);
 
-export interface setPinStateOptions {
+interface setPinStateOptions {
   state: boolean; 
   number: number;
 } 
