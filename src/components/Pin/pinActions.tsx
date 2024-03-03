@@ -3,7 +3,7 @@ import { PinOptionsType } from "../../logic/pinout";
 import GPIOSlide from "../GPIOSlide";
 import { BoardPinProps } from "./index";
 
-export function PinActions({ pin }: BoardPinProps) {
+function PinActions({ pin }: BoardPinProps) {
     const { number, type } = pin
     if (type === PinOptionsType.GPIO) {
         return <GPIOSlide onToggle={(state) => setGPIOState({ number, state })} />

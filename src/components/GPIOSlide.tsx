@@ -6,7 +6,7 @@ interface GPIOSlideProps {
     active?: boolean;
 }
 
-export function GPIOSlide({ onToggle = () => {}, active: activeProps }: GPIOSlideProps) {
+function GPIOSlide({ onToggle = () => {}, active: activeProps }: GPIOSlideProps) {
     const [active, setActive] = useState(activeProps);
 
     const onClick = () => {

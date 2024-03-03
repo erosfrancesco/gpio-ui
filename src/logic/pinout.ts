@@ -133,6 +133,4 @@ export const pinoutMap: PinOptions[] = [
         type: PinOptionsType.GPIO,
         label: 'GPIO21 (SCKL)'
     }
-]
-
-export default pinoutMap
+];

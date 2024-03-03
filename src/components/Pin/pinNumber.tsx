@@ -1,15 +1,16 @@
 import { useState } from 'preact/hooks';
-import { PinOptions, PinOptionsType } from '../../logic/pinout'
+import { BoardPinProps } from './index';
+import { PinOptionsType } from '../../logic/pinout'
 import './pinNumber.css'
 
-const typeClassNames :Object = {};
+const typeClassNames :any = {};
 typeClassNames[PinOptionsType.POWER] = 'pin_number_power'
 typeClassNames[PinOptionsType.GROUND] = 'pin_number_ground'
 typeClassNames[PinOptionsType.GPIO] = 'pin_number_gpio'
 typeClassNames[PinOptionsType.ID_SC] = 'pin_number_id'
 typeClassNames[PinOptionsType.ID_SD] = 'pin_number_id'
 
-export function PinNumber({ pin }: BoardPinProps) {
+function PinNumber({ pin }: BoardPinProps) {
     const { type, number } = pin;
     const [selected, setSelected] = useState(false);
     const toggleSelected = () => { setSelected(!selected); }

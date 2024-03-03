@@ -11,14 +11,14 @@ typeClassNames[PinOptionsType.GPIO] = 'pin_number_gpio'
 typeClassNames[PinOptionsType.ID_SC] = 'pin_number_id'
 typeClassNames[PinOptionsType.ID_SD] = 'pin_number_id'
 
-export interface BoardPin extends PinOptions {
+interface BoardPin extends PinOptions {
     number: number
     isLeft?: boolean
 }
 
 export interface BoardPinProps { pin: BoardPin }
 
-export function Pin({ pin }: BoardPinProps) {
+function Pin({ pin }: BoardPinProps) {
     const { label, isLeft } = pin;
 
     return <div className={'pin_row' + (isLeft ? ' left_column' : '')}>
