@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#kill -9 ps -e | grep node | awk '{print $1}'
+#pkill node
+
+cd $HOME/Code/pins/frontend/vite-pins
+git pull
+npm run start-ws
