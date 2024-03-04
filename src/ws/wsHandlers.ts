@@ -1,8 +1,8 @@
-import { WSActionHandler, WSActionHandlersMap } from "interfaces/wsActions";
+import { WSEventHandlersMap, WSEventHandler } from "interfaces/wsActions";
 
 const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;
 
-const messageHandler: WSActionHandler = (_, data :any) => {
+const messageHandler: WSEventHandler = (_, data :any) => {
   const { error, message } = data;
 
   // ERROR RECEIVED
@@ -15,9 +15,9 @@ const messageHandler: WSActionHandler = (_, data :any) => {
   console.log(message)
 }
 
-export const eventNotMapped: WSActionHandler = () => {}
+export const eventNotMapped: WSEventHandler = () => {}
 
-export const eventHandlers: WSActionHandlersMap = {
+export const eventHandlers: WSEventHandlersMap = {
   [VITE_WS_ACTION_SENDMESSAGE]: messageHandler,
   [VITE_WS_ACTION_PINWRITE]: eventNotMapped,
   [VITE_WS_ACTION_PINREAD]: eventNotMapped,
