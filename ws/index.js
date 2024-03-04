@@ -1,12 +1,14 @@
 import 'dotenv/config'
 import { WebSocketServer } from "ws";
-import { actionHandlers, actionNotMapped } from "./actionRouter.js";
+import { eventHandlers, eventNotMapped } from "./wsEvents.js";
+import { sendToUI } from './actions/index.js';
 
 const { VITE_WSPORT: port } = process.env;
 const wss = new WebSocketServer({ port });
 
 wss.on("connection", (ws) => {
   console.log("client connected to me!");
+  sendToUI(ws, { message: 'Connected' })
 
   ws.on("error", (e) => {
     console.error(e);
@@ -18,7 +20,7 @@ wss.on("connection", (ws) => {
     try {
       const data = JSON.parse(buffer);
       const { type } = data;
-      const handler = actionHandlers[type] || actionNotMapped;
+      const handler = eventHandlers[type] || eventNotMapped;
       handler(ws, data);
     } catch (error) {
       console.log("Error parsing message: ", buffer, error);
