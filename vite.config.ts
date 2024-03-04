@@ -8,6 +8,7 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: 'interfaces', replacement: fileURLToPath(new URL('./src/interfaces', import.meta.url)) },
+      { find: 'logic', replacement: fileURLToPath(new URL('./src/logic', import.meta.url)) },
     ],
   },
 })

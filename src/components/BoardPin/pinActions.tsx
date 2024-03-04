@@ -1,4 +1,4 @@
-import { setGPIOState } from "../../logic/pinActions.ts";
+import { setGPIOState } from "logic/pinActions.ts";
 import GPIOSlide from "../UI/GPIOSlide.tsx";
 import { PinOptionsType } from "interfaces/pin.ts";
 import { BoardPinProps } from "interfaces/components/BoardPin.ts";

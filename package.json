@@ -10,7 +10,9 @@
     "start-ws": "node ws/index"
   },
   "dependencies": {
-    "preact": "^10.19.5"
+    "events": "^3.3.0",
+    "preact": "^10.19.5",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.1",

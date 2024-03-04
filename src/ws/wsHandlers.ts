@@ -1,6 +1,9 @@
+import EventEmitter from "events";
 import { WSEventHandlersMap, WSEventHandler } from "interfaces/ws";
 
 const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;
+
+export const event = new EventEmitter();
 
 const messageHandler: WSEventHandler = (_, data :any) => {
   const { error, message } = data;
@@ -12,7 +15,9 @@ const messageHandler: WSEventHandler = (_, data :any) => {
   }
 
   // MESSAGE RECEIVED
-  console.log(message)
+  // wsMessages.save(message); // can't from here...
+  // need to fire event
+  event.emit(VITE_WS_ACTION_SENDMESSAGE, message);
 }
 
 export const eventNotMapped: WSEventHandler = () => {}

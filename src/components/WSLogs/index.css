@@ -14,3 +14,8 @@
     border: solid #888 0.125rem;
     border-radius: 0.25rem;
 }
+
+.wslog_row {
+    padding: 0;
+    margin: 0;
+}

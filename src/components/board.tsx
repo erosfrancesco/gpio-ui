@@ -1,4 +1,4 @@
-import { pinoutMap } from '../logic/pinout.ts'
+import { pinoutMap } from 'logic/pinout.ts'
 import BoardPin from './BoardPin/index.tsx'
 import './board.css'
 
