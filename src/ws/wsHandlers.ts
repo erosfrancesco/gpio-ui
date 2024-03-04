@@ -1,4 +1,4 @@
-import { WSEventHandlersMap, WSEventHandler } from "interfaces/wsActions";
+import { WSEventHandlersMap, WSEventHandler } from "interfaces/ws";
 
 const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;
 
