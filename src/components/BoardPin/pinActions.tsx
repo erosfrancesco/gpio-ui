@@ -1,9 +1,9 @@
 import { setGPIOState } from "../../logic/pinActions.ts";
-import GPIOSlide from "../GPIOSlide";
+import GPIOSlide from "../UI/GPIOSlide.tsx";
 import { PinOptionsType } from "interfaces/pin.ts";
 import { BoardPinProps } from "interfaces/components/BoardPin.ts";
 
-function PinActions({ pin }: BoardPinProps) {
+function BoardPinActions({ pin }: BoardPinProps) {
     const { number, type } = pin
     if (type === PinOptionsType.GPIO) {
         return <GPIOSlide onToggle={(state) => setGPIOState({ number, state })} />
@@ -17,4 +17,4 @@ function PinActions({ pin }: BoardPinProps) {
     return <div></div>
 }
 
-export default PinActions
+export default BoardPinActions

@@ -11,7 +11,7 @@ typeClassNames[PinOptionsType.GPIO] = 'pin_number_gpio'
 typeClassNames[PinOptionsType.ID_SC] = 'pin_number_id'
 typeClassNames[PinOptionsType.ID_SD] = 'pin_number_id'
 
-function PinNumber({ pin }: BoardPinProps) {
+function BoardPinNumber({ pin }: BoardPinProps) {
     const { type, number } = pin;
     const [selected, setSelected] = useState(false);
     const toggleSelected = () => { setSelected(!selected); }
@@ -27,4 +27,4 @@ function PinNumber({ pin }: BoardPinProps) {
 
 
 
-export default PinNumber
+export default BoardPinNumber
