@@ -1,9 +1,7 @@
 import './index.css'
 
 function WSLogs() {
-    return <div style={{
-        display: 'flex'
-    }}>
+    return <div className='wslog_wrapper'>
         <span>hello logs</span>
     </div>
 }
