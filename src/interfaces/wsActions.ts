@@ -11,7 +11,12 @@ export interface SetPinStateOptions {
     number: number;
 }
 
-export type ActionHandler = (ws: WebSocket, data: any) => void;
-export interface ActionHandlersMap {
-  [key: string]: ActionHandler
+export type WSActionHandler = (ws: WebSocket, data: any) => void;
+export interface WSActionHandlersMap {
+  [key: string]: WSActionHandler
+}
+
+export type WSEventHandler = (ws: WebSocket, data: any) => void;
+export interface WSEventHandlersMap {
+  [key: string]: WSEventHandler
 }

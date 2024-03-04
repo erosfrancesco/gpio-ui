@@ -1,4 +1,4 @@
-import { WSActionHandlerGen, SendMessageToNodeOptions, SetPinStateOptions } from "interfaces/wsActions.ts";
+import { WSActionHandlerGen, SendMessageToNodeOptions, SetPinStateOptions, WSActionHandler, WSActionHandlersMap } from "interfaces/wsActions.ts";
 import ws from "./index.ts";
 
 const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = import.meta.env;

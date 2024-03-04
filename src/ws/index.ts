@@ -1,4 +1,4 @@
-import { actionHandlers, actionNotMapped } from "./actionRouter.ts";
+import { eventHandlers, eventNotMapped } from "./wsHandlers.ts";
 
 const { VITE_WSPORT, VITE_WSPATH } = import.meta.env;
 
@@ -10,7 +10,7 @@ const onWSMessage = (buffer :any) => {
     try {
         const data = JSON.parse(buffer.data);
         const { type } = data;
-        const handler = actionHandlers[type] || actionNotMapped;
+        const handler = eventHandlers[type] || eventNotMapped;
         handler(ws, data);
     } catch (e) {
         console.log("Error parsing message: ", e);
