@@ -14,10 +14,11 @@ const initialState :WSMessageStoreState = {
     pool: []
 };
 
+// TODO: - On WS Connected
 export const useWSMessages = create<WSMessageStore>((set) => ({
     ...initialState,
     save: (newMessage) => set((state) => {
-        const pool = [...state.pool, newMessage];
+        const pool = [newMessage, ...state.pool];
         return { pool };
     }),
     reset: () => set({ pool: [] }),

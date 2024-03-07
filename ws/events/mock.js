@@ -1,7 +1,5 @@
 import { sendToUI } from '../actions/index.js';
 
-// const { VITE_WS_ACTION_SENDMESSAGE, VITE_WS_ACTION_PINWRITE, VITE_WS_ACTION_PINREAD } = process.env;
-
 export const receivedMessageFromUI = (ws, { error, message }) => {
   // console.log('received message', VITE_WS_ACTION_SENDMESSAGE);
 };
