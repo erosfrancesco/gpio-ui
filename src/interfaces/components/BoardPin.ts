@@ -1,8 +1,10 @@
-import { UIPinOptions } from "interfaces/pin"
+import { UIPinOptions } from "interfaces/pin";
 
 export interface BoardPin extends UIPinOptions {
-    number: number
-    isLeft?: boolean
+  number: number;
+  isLeft?: boolean;
 }
 
-export interface BoardPinProps { pin: BoardPin }
+export interface BoardPinProps {
+  pin: BoardPin;
+}

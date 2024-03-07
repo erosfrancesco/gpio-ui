@@ -1,15 +1,15 @@
 export interface UIGPIOActions {
-    number: number;
+  number: number;
 }
 
 export interface GPIOAction {
-    number: number;
+  number: number;
 }
 
 export interface setGPIOStateActionOptions extends GPIOAction {
-    // options for setting GPIO state
-    state: boolean
+  // options for setting GPIO state
+  state: boolean;
 }
 export interface getGPIOStateActionOptions extends GPIOAction {
-    // options for getting GPIO state
+  // options for getting GPIO state
 }

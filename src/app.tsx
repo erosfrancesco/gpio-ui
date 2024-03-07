@@ -1,11 +1,13 @@
-import WSLogs from './components/WSLogs'
-import Board from './components/board'
+import WSLogs from "./components/WSLogs";
+import Board from "./components/board";
 
-import AppLogic from './app.logic'
+import AppLogic from "./app.logic";
 
 export function App() {
-  return <AppLogic>
-    <WSLogs />
-    <Board />
-  </AppLogic>
+  return (
+    <AppLogic>
+      <WSLogs />
+      <Board />
+    </AppLogic>
+  );
 }
