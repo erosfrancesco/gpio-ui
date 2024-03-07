@@ -1,8 +1,9 @@
-import { eventHandlers, eventNotMapped } from "./wsHandlers.ts";
+import { eventHandlers, eventNotMapped, event } from "./wsHandlers.ts";
 
 const { VITE_WSPORT, VITE_WSPATH } = import.meta.env;
 
 export const ws = new WebSocket("ws://" + VITE_WSPATH + ":" + VITE_WSPORT);
+export { eventHandlers, event };
 
 // HANDLERS
 const onWSMessage = (buffer :any) => {

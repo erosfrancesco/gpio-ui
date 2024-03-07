@@ -1,6 +1,6 @@
 import { useWSMessages } from 'logic/ws';
 import './index.css'
-import { event } from 'ws/wsHandlers';
+import { event } from 'ws/index';
 import { useEffect } from 'preact/hooks';
 const { VITE_WS_ACTION_SENDMESSAGE } = import.meta.env;
 

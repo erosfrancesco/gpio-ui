@@ -2,7 +2,7 @@ import { pinoutMap } from 'logic/pinout.ts'
 import BoardPin from './BoardPin/index.tsx'
 import './board.css'
 
-import { event } from 'ws/wsHandlers';
+import { event } from 'ws/index';
 import { useEffect } from 'preact/hooks';
 const { VITE_WS_ACTION_PINWRITE } = import.meta.env;
 
