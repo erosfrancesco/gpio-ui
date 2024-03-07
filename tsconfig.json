@@ -11,6 +11,7 @@
       "react-dom": ["./node_modules/preact/compat/"],
       "interfaces/*": ["./src/interfaces/*"],
       "logic/*": ["./src/logic/*"],
+      "ws/*": ["./src/ws/*"],
     },
 
     /* Bundler mode */

@@ -13,7 +13,7 @@ const onWSMessage = (buffer :any) => {
         const handler = eventHandlers[type] || eventNotMapped;
         handler(ws, data);
     } catch (e) {
-        console.log("Error parsing message: ", e);
+        console.error("Error parsing message: ", e);
     }
 };
 
@@ -21,8 +21,8 @@ const onWSError = (e: any) => {
     console.error(e);
 };
 
-const onWSOpen = () => {
-    console.log('connection to node client estabilished.');
+const onWSOpen = (ws) => {
+    console.log('connection to node client estabilished.', ws);
 };
 
 ws.onerror = onWSError;

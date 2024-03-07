@@ -7,7 +7,6 @@ const { VITE_WSPORT: port } = process.env;
 const wss = new WebSocketServer({ port });
 
 wss.on("connection", (ws) => {
-  console.log("client connected to me!");
   sendToUI(ws, { message: "Connected" });
 
   ws.on("error", (e) => {
@@ -23,7 +22,7 @@ wss.on("connection", (ws) => {
       const handler = eventHandlers[type] || eventNotMapped;
       handler(ws, data);
     } catch (error) {
-      console.log("Error parsing message: ", buffer, error);
+      console.error("Error parsing message: ", buffer, error);
       sendToUI(ws, { error });
     }
   });

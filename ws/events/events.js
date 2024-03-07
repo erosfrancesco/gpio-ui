@@ -2,7 +2,6 @@ import { pinRead, pinWrite, sendToUI } from "../actions/index.js";
 const { VITE_WS_ACTION_SENDMESSAGE } = process.env;
 
 export const handleMessageFromUI = (ws, { error, message }) => {
-  console.log("received message", VITE_WS_ACTION_SENDMESSAGE);
 };
 
 export const handlePinWrite = (ws, { number, state }) => {
