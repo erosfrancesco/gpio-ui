@@ -22,10 +22,15 @@ const writePinHandler: WSEventHandler = (_, data :any) => {
   event.emit(VITE_WS_ACTION_PINWRITE, { number, state });
 }
 
+const readPinHandler: WSEventHandler = (_, data :any) => {
+  const { number, state } = data;
+  event.emit(VITE_WS_ACTION_PINREAD, { number, state });
+}
+
 export const eventNotMapped: WSEventHandler = () => {}
 
 export const eventHandlers: WSEventHandlersMap = {
   [VITE_WS_ACTION_SENDMESSAGE]: messageHandler,
   [VITE_WS_ACTION_PINWRITE]: writePinHandler,
-  [VITE_WS_ACTION_PINREAD]: eventNotMapped,
+  [VITE_WS_ACTION_PINREAD]: readPinHandler,
 };

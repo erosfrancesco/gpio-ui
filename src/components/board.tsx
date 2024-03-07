@@ -2,21 +2,9 @@ import { pinoutMap } from 'logic/board.ts'
 import BoardPin from './BoardPin/index.tsx'
 import './board.css'
 
-import { event } from 'ws/index';
-import { useEffect } from 'preact/hooks';
-const { VITE_WS_ACTION_PINWRITE } = import.meta.env;
-
 function Board() {
     const rightPinout = pinoutMap.filter((_, index) => index % 2)
     const leftPinout = pinoutMap.filter((_, index) => !(index % 2))
-
-    useEffect(() => {
-        event.on(VITE_WS_ACTION_PINWRITE, (pinState) => {
-            console.log('got write on pin', pinState)
-        });
-
-        // TODO: - On app startup, get all GPIO status and update this
-    }, []);
     
     return <div style={{
         display: 'flex'

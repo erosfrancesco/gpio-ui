@@ -22,8 +22,8 @@ const onWSError = (e: any) => {
     console.error(e);
 };
 
-const onWSOpen = (ws) => {
-    console.log('connection to node client estabilished.', ws);
+const onWSOpen = () => {
+    // event.emit('ON_WS_CONNECTED');
 };
 
 ws.onerror = onWSError;

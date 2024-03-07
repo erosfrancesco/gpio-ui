@@ -26,9 +26,10 @@ export const pinWrite = (ws, { number, state }) => {
   );
 };
 
-export const pinRead = (ws, { number, state }) => {
-  sendToUI(ws, { message: "[MOCK] read pin: " + number });
+export const pinRead = (ws, { number }) => {
+  const state = Math.random() < 0.5; // random
 
+  sendToUI(ws, { message: "[MOCK] read pin " + number + " : " + state });
   ws.send(
     JSON.stringify({
       type: VITE_WS_ACTION_PINREAD,

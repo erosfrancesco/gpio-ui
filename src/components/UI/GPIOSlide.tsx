@@ -1,14 +1,19 @@
-import { useState } from "preact/hooks"
+import { useState, useEffect } from "preact/hooks"
 import './GPIOSlide.css'
 import { GPIOSlideProps } from "interfaces/components/GPIOSlide";
 
+// TODO: - Disabled
 function GPIOSlide({ onToggle = () => {}, active: activeProps }: GPIOSlideProps) {
     const [active, setActive] = useState(activeProps);
 
+    useEffect(() => {
+        setActive(activeProps);
+    }, [activeProps]);
+
     const onClick = () => {
         const updatedValue = !active;
-        setActive(updatedValue)
-        onToggle(updatedValue)
+        setActive(updatedValue);
+        onToggle(updatedValue);
     }
 
     return <button onClick={onClick} className='slide'>
