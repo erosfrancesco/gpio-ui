@@ -6,7 +6,7 @@ export enum PinOptionsType {
     ID_SD
 }
 
-export interface PinOptions {
+export interface UIPinOptions {
     type: PinOptionsType;
     label: string;
 }

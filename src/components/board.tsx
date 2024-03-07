@@ -1,4 +1,4 @@
-import { pinoutMap } from 'logic/pinout.ts'
+import { pinoutMap } from 'logic/board.ts'
 import BoardPin from './BoardPin/index.tsx'
 import './board.css'
 
@@ -14,6 +14,8 @@ function Board() {
         event.on(VITE_WS_ACTION_PINWRITE, (pinState) => {
             console.log('got write on pin', pinState)
         });
+
+        // TODO: - On app startup, get all GPIO status and update this
     }, []);
     
     return <div style={{

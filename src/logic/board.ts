@@ -1,6 +1,8 @@
-import { PinOptions, PinOptionsType } from "interfaces/pin";
+import { create } from 'zustand'
+import { UIPinOptions, PinOptionsType } from "interfaces/pin";
+import { BoardPinsStore, BoardPinsStoreState } from 'interfaces/board';
 
-export const pinoutMap: PinOptions[] = [
+export const pinoutMap: UIPinOptions[] = [
     {
         type: PinOptionsType.POWER,
         label: '3.3V'
@@ -123,3 +125,19 @@ export const pinoutMap: PinOptions[] = [
         label: 'GPIO21 (SCKL)'
     }
 ];
+
+const initialState :BoardPinsStoreState = {
+    pins: []
+};
+
+export const useBoardPins = create<BoardPinsStore>((set) => ({
+    ...initialState,
+    setPin: (newPinState) => set((state) => {
+        const { pins } = state;
+        const { number } = newPinState;
+        pins[number] = newPinState;
+
+        return { ...state, pins };
+    }),
+    reset: () => set(initialState),
+}));

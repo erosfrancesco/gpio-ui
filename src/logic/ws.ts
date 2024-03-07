@@ -1,14 +1,6 @@
+import { WSMessageStore, WSMessageStoreState } from 'interfaces/ws';
 import { create } from 'zustand'
 
-//
-interface WSMessageStoreState {
-    pool: string[];
-}
-interface WSMessageStore extends WSMessageStoreState {
-    save: (newMessage :string) => void;
-    reset: () => void;
-}
-//
 
 const initialState :WSMessageStoreState = {
     pool: []
@@ -21,5 +13,5 @@ export const useWSMessages = create<WSMessageStore>((set) => ({
         const pool = [newMessage, ...state.pool];
         return { pool };
     }),
-    reset: () => set({ pool: [] }),
+    reset: () => set(initialState),
 }));
